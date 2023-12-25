@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:movies_app/core/app_router_web.dart';
 import 'package:movies_app/core/widgets/custom_botton.dart';
 
 class WelcomeContent extends StatelessWidget {
@@ -12,7 +14,7 @@ class WelcomeContent extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Image.asset('assets/images/icon.png'),
+            Image.asset('assets/images/logo.png'),
             const Text(
               'Enjoy the newest movies',
               style: TextStyle(
@@ -23,7 +25,13 @@ class WelcomeContent extends StatelessWidget {
             const SizedBox(
               height: 15,
             ),
-            const CustomBotton(text: 'Log in', width: 225),
+            CustomBotton(
+              text: 'Log in',
+              width: 225,
+              onPressed: () {
+                GoRouter.of(context).push(AppRoutersWeb.kHomeView);
+              },
+            ),
             const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

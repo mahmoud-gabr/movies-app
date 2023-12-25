@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app/core/app_router.dart';
+import 'package:movies_app/core/app_router_mobile.dart';
+import 'package:movies_app/core/app_router_web.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 
 void main() {
@@ -19,10 +20,18 @@ class MoviesApp extends StatelessWidget {
           fontFamily: 'Poppins',
           color: Colors.white, //dont work
         ))),
-        routerConfig: AppRouters.router,
+        routerConfig: AppRoutersWeb.router,
       );
     } else {
-      return Scaffold();
+      return MaterialApp.router(
+        theme: ThemeData.dark().copyWith(
+            textTheme: const TextTheme(
+                bodyLarge: TextStyle(
+          fontFamily: 'Poppins',
+          color: Colors.white, //dont work
+        ))),
+        routerConfig: AppRoutersMoblile.router,
+      );
     }
   }
 }

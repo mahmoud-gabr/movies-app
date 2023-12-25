@@ -13,7 +13,12 @@ class MoviesApp extends StatelessWidget {
   Widget build(BuildContext context) {
     if (kIsWeb) {
       return MaterialApp.router(
-        theme: ThemeData.dark(),
+        theme: ThemeData.dark().copyWith(
+            textTheme: const TextTheme(
+                bodyLarge: TextStyle(
+          fontFamily: 'Poppins',
+          color: Colors.white, //dont work
+        ))),
         routerConfig: AppRouters.router,
       );
     } else {

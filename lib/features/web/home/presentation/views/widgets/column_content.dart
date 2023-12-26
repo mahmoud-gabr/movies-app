@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:movies_app/core/app_router_web.dart';
 import 'package:movies_app/features/web/home/presentation/views/widgets/column_item.dart';
 
 class ColumnContent extends StatelessWidget {
@@ -21,20 +23,24 @@ class ColumnContent extends StatelessWidget {
             ),
             ColumnItem(
               onTap: () {
-                
+                GoRouter.of(context).push(AppRoutersWeb.kFavoriteView);
               },
               icon: Icons.favorite_border,
               text: 'Favorite',
-              fontWeight: view == 'favorite' ? FontWeight.w900 : FontWeight.normal,
+              fontWeight:
+                  view == 'favorite' ? FontWeight.w900 : FontWeight.normal,
             ),
             const SizedBox(
               height: 20,
             ),
             ColumnItem(
-              onTap: () {},
+              onTap: () {
+                GoRouter.of(context).push(AppRoutersWeb.kTrendingView);
+              },
               icon: Icons.trending_up,
               text: 'Trending',
-              fontWeight: FontWeight.normal,
+              fontWeight:
+                  view == 'trending' ? FontWeight.w900 : FontWeight.normal,
             ),
             const SizedBox(
               height: 20,

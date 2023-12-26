@@ -12,8 +12,10 @@ class HomeViewWeb extends StatelessWidget {
       body: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-         SlideBar(view: 'home',),
-           Column(
+          SlideBar(
+            view: 'home',
+          ),
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // HomeCover(),
@@ -34,7 +36,10 @@ class HomeViewWeb extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              TrendingListView(),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30),
+                child: TrendingListView(),
+              ),
             ],
           ),
         ],

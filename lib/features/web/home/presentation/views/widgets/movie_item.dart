@@ -13,13 +13,19 @@ class MovieItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8),
+      padding: const EdgeInsets.only(right: 8),
       child: Container(
-        width: 255,
-        height: 301,
+        width: width,
+        height: height,
         decoration: const BoxDecoration(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(20),
+            bottomRight: Radius.circular(20),
+          ),
           image: DecorationImage(
-              image: AssetImage('assets/images/mov_1.png'), fit: BoxFit.cover),
+            image: AssetImage('assets/images/mov_1.png'),
+            fit: BoxFit.cover,
+          ),
         ),
         child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

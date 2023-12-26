@@ -7,18 +7,27 @@ class TrendingListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Padding(
-                padding:  EdgeInsets.only(left: 30),
-                child: Row(
-                  children: [
-                    MovieItem(width: 255,height: 301,),
-                    MovieItem(width: 255,height: 301,),
-                    MovieItem(width: 255,height: 301,),
-                    MovieItem(width: 255,height: 301,),
-                  ],
-                ),
-              ),
-            );
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: [
+          MovieItem(
+            width: 255,
+            height: 301,
+          ),
+          MovieItem(
+            width: 255,
+            height: 301,
+          ),
+          MovieItem(
+            width: 255,
+            height: 301,
+          ),
+          MovieItem(
+            width: 255,
+            height: 301,
+          ),
+        ],
+      ),
+    );
   }
 }

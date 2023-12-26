@@ -1,73 +1,82 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:movies_app/features/web/home/presentation/views/widgets/column_item.dart';
 
 class ColumnContent extends StatelessWidget {
-  const ColumnContent({super.key});
-
+  const ColumnContent({super.key, required this.view});
+  final String view;
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
+    return SizedBox(
         width: 144,
         child: Column(
           children: [
             ColumnItem(
+              onTap: () {},
               icon: Icons.local_movies,
               text: 'Home',
-              fontWeight: FontWeight.w900,
+              fontWeight: view == 'home' ? FontWeight.w900 : FontWeight.normal,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             ColumnItem(
+              onTap: () {
+                
+              },
               icon: Icons.favorite_border,
               text: 'Favorite',
-              fontWeight: FontWeight.normal,
+              fontWeight: view == 'favorite' ? FontWeight.w900 : FontWeight.normal,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             ColumnItem(
+              onTap: () {},
               icon: Icons.trending_up,
               text: 'Trending',
               fontWeight: FontWeight.normal,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             ColumnItem(
+              onTap: () {},
               icon: Icons.calendar_today_rounded,
               text: 'Comming soon',
               fontWeight: FontWeight.normal,
             ),
-            SizedBox(
+            const SizedBox(
               height: 80,
             ),
             ColumnItem(
+              onTap: () {},
               icon: Icons.people,
               text: 'Community',
               fontWeight: FontWeight.normal,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             ColumnItem(
+              onTap: () {},
               icon: Icons.messenger_outline_rounded,
               text: 'Socia',
               fontWeight: FontWeight.normal,
             ),
-            SizedBox(
+            const SizedBox(
               height: 100,
             ),
             ColumnItem(
+              onTap: () {},
               icon: Icons.display_settings_outlined,
               text: 'Setting',
               fontWeight: FontWeight.normal,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             ColumnItem(
+              onTap: () {},
               icon: Icons.logout,
               text: 'Logout',
               fontWeight: FontWeight.normal,

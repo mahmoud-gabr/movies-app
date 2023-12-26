@@ -6,10 +6,11 @@ class ColumnItem extends StatelessWidget {
       {super.key,
       required this.icon,
       required this.text,
-      required this.fontWeight});
+      required this.fontWeight, required this.onTap});
   final IconData icon;
   final String text;
   final FontWeight fontWeight;
+  final VoidCallback? onTap;
   @override
   Widget build(BuildContext context) {
     return Row(

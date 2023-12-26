@@ -1,36 +1,42 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app/core/widgets/custom_botton.dart';
-import 'package:movies_app/core/widgets/custom_fav_booton.dart';
-import 'package:movies_app/features/web/home/presentation/views/widgets/appbar.dart';
-import 'package:movies_app/features/web/home/presentation/views/widgets/column_content.dart';
-import 'package:movies_app/features/web/home/presentation/views/widgets/home_cover.dart';
+
+import 'package:movies_app/features/web/home/presentation/views/widgets/slide_bar.dart';
+import 'package:movies_app/features/web/home/presentation/views/widgets/trending_list_view.dart';
 
 class HomeViewWeb extends StatelessWidget {
   const HomeViewWeb({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            width: MediaQuery.of(context).size.width * .15,
-            color: const Color(0xff21201E),
-            child: Padding(
-              padding: const EdgeInsets.all(20),
-              child: Column(
-                children: [
-                  Image.asset('assets/images/logo.png'),
-                  const SizedBox(
-                    height: 50,
-                  ),
-                  const ColumnContent(),
-                ],
+         SlideBar(view: 'home',),
+           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // HomeCover(),
+              SizedBox(
+                height: 5,
               ),
-            ),
+              Padding(
+                padding: EdgeInsets.only(left: 30),
+                child: Text(
+                  'Trending',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              TrendingListView(),
+            ],
           ),
-          const HomeCover()
         ],
       ),
     );

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CustomFavBotton extends StatefulWidget {
-  const CustomFavBotton({super.key, required this.width, required this.height});
+  const CustomFavBotton({super.key, required this.width, required this.height, required this.borderRadius});
   final double width;
   final double height;
+  final double borderRadius;
 
   @override
   State<CustomFavBotton> createState() => _CustomFavBottonState();
@@ -24,7 +25,7 @@ class _CustomFavBottonState extends State<CustomFavBotton> {
         height: widget.height,
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(14),
+          borderRadius: BorderRadius.circular(widget.borderRadius),
         ),
         child: Icon(
           isFav ? Icons.favorite_border : Icons.favorite,

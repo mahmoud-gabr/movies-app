@@ -1,5 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:movies_app/core/widgets/dark_background.dart';
+import 'package:movies_app/features/mobile/splash/presentation/views/widgets/splash_content.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -27,9 +29,21 @@ class _SplashViewState extends State<SplashView> {
         children: [
           CarouselSlider(
             items: [
-              Image.asset('assets/images/slash_cover.png'),
-              Image.asset('assets/images/slash_cover.png'),
-              Image.asset('assets/images/slash_cover.png'),
+              Image.asset(
+                'assets/images/slash_cover.png',
+                width: double.infinity,
+                height: double.infinity,
+              ),
+              Image.asset(
+                'assets/images/slash_cover.png',
+                width: double.infinity,
+                height: double.infinity,
+              ),
+              Image.asset(
+                'assets/images/slash_cover.png',
+                width: double.infinity,
+                height: double.infinity,
+              ),
             ],
             options: CarouselOptions(
               height: double.infinity,
@@ -43,54 +57,14 @@ class _SplashViewState extends State<SplashView> {
               },
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  titles[currentIndex],
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    fontSize: 30,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w900,
-                  ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: List.generate(
-                    3,
-                    (index) => Container(
-                      width: 10.0,
-                      height: 10.0,
-                      margin: const EdgeInsets.symmetric(horizontal: 4.0),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: currentIndex == index
-                            ? Colors.white
-                            : Colors.white.withOpacity(0.4),
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 60,
-                ),
-                Text(
-                  subtitles[currentIndex],
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(color: Colors.white),
-                ),
-                Text('button'),
-              ],
-            ),
-          ),
+          const DarkBackground(),
+          SplashContent(titles: titles, currentIndex: currentIndex, subtitles: subtitles),
         ],
       ),
     );
   }
+
+
 }
+
+

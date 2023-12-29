@@ -16,13 +16,15 @@ class BottonColumn extends StatelessWidget {
           CustomBottonApp(
             isFilled: true,
             onTap: () {
-              GoRouter.of(context).push(AppRoutersMoblile.kRegisterview);
+              GoRouter.of(context).push(AppRoutersMoblile.kRegisterView);
             },
             text: 'Suscribete a movie+',
           ),
           CustomBottonApp(
             isFilled: false,
-            onTap: () {},
+            onTap: () {
+              GoRouter.of(context).push(AppRoutersMoblile.kHomeView);
+            },
             text: 'Ya te suscibiste a movie+',
           ),
           CustomBottonApp(

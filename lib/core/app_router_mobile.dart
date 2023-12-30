@@ -1,11 +1,13 @@
 import 'package:go_router/go_router.dart';
 import 'package:movies_app/features/mobile/home/presentation/views/home_view.dart';
+import 'package:movies_app/features/mobile/home/presentation/views/series_view.dart';
 import 'package:movies_app/features/mobile/register/presentation/views/register_view.dart';
 import 'package:movies_app/features/mobile/splash/presentation/views/splash_view.dart';
 
 abstract class AppRoutersMoblile {
   static const kRegisterView = '/registerView';
   static const kHomeView = '/homeView';
+  static const kSeriesView = '/seriesView';
   static final router = GoRouter(routes: [
     GoRoute(
       path: '/',
@@ -19,5 +21,9 @@ abstract class AppRoutersMoblile {
       path: kHomeView,
       builder: (context, state) => const HomeView(),
     ),
-  ]);
+     GoRoute(
+      path: kSeriesView,
+      builder: (context, state) => const SeriesView(),
+    ),
+  ],);
 }

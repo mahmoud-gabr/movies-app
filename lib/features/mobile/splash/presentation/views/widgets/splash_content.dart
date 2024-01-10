@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app/core/widgets/slider_dots.dart';
-import 'package:movies_app/features/mobile/splash/presentation/views/widgets/botton_column.dart';
+import 'package:go_router/go_router.dart';
+import 'package:movies_app/core/app_router_mobile.dart';
+import 'package:movies_app/core/widgets/custoum_botton_app.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class SplashContent extends StatelessWidget {
   const SplashContent({
@@ -36,7 +38,12 @@ class SplashContent extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          SliderDots(currentIndex: currentIndex),
+          Center(
+              child: AnimatedSmoothIndicator(
+            activeIndex: currentIndex,
+            count: 3,
+          )),
+          // SliderDots(currentIndex: currentIndex),
           const SizedBox(
             height: 60,
           ),
@@ -48,7 +55,33 @@ class SplashContent extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-          const BottonColumn(),
+          SizedBox(
+            height: 177,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                CustomBottonApp(
+                  isFilled: true,
+                  onTap: () {
+                    GoRouter.of(context).push(AppRoutersMoblile.kRegisterView);
+                  },
+                  text: 'Suscribete a movie+',
+                ),
+                CustomBottonApp(
+                  isFilled: false,
+                  onTap: () {
+                    GoRouter.of(context).push(AppRoutersMoblile.kHomeView);
+                  },
+                  text: 'Ya te suscibiste a movie+',
+                ),
+                CustomBottonApp(
+                  isFilled: false,
+                  onTap: () {},
+                  text: 'Iniciar sesion',
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );

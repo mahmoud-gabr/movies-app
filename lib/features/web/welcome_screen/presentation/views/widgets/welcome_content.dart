@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:movies_app/core/app_router_web.dart';
-import 'package:movies_app/core/widgets/custom_botton.dart';
+import 'package:movies_app/core/widgets/custom_text_botton.dart';
 
 class WelcomeContent extends StatelessWidget {
   const WelcomeContent({super.key});
@@ -25,7 +25,7 @@ class WelcomeContent extends StatelessWidget {
             const SizedBox(
               height: 15,
             ),
-            CustomBotton(
+            CustomTextBotton(
               text: 'Log in',
               width: 225,
               onPressed: () {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app/core/widgets/custom_botton.dart';
+import 'package:movies_app/core/widgets/custom_text_botton.dart';
 import 'package:movies_app/core/widgets/custom_fav_booton.dart';
 import 'package:movies_app/features/web/home/presentation/views/widgets/appbar.dart';
 
@@ -51,11 +51,15 @@ class HomeCover extends StatelessWidget {
           ),
           Row(
             children: [
-              CustomBotton(text: 'Watch now', width: 139),
+              CustomTextBotton(text: 'Watch now', width: 139),
               SizedBox(
                 width: 25,
               ),
-              CustomFavBotton(width: 54, height: 54, borderRadius: 14,),
+              CustomFavBotton(
+                width: 54,
+                height: 54,
+                borderRadius: 14,
+              ),
             ],
           )
         ],

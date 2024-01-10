@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:movies_app/features/mobile/register/presentation/views/widgets/custom_password_text_field.dart';
-import 'package:movies_app/features/mobile/register/presentation/views/widgets/custom_text_field.dart';
 import 'package:movies_app/features/mobile/register/presentation/views/widgets/register_appbar.dart';
 import 'package:movies_app/features/mobile/register/presentation/views/widgets/form_item.dart';
 import 'package:movies_app/features/mobile/register/presentation/views/widgets/register_form.dart';

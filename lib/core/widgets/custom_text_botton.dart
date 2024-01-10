@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CustomBotton extends StatelessWidget {
-  const CustomBotton(
+class CustomTextBotton extends StatelessWidget {
+  const CustomTextBotton(
       {super.key,
       required this.text,
       this.fontSize,

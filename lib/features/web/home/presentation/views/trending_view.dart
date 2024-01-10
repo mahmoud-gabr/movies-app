@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app/core/widgets/custom_botton.dart';
+import 'package:movies_app/core/widgets/custom_text_botton.dart';
 import 'package:movies_app/core/widgets/custom_fav_booton.dart';
 import 'package:movies_app/features/web/home/presentation/views/widgets/appbar.dart';
 import 'package:movies_app/features/web/home/presentation/views/widgets/slide_bar.dart';
@@ -139,7 +139,7 @@ class TrendingView extends StatelessWidget {
                           ),
                           Row(
                             children: [
-                              CustomBotton(
+                              CustomTextBotton(
                                 text: 'Watch Now',
                                 width: 139,
                               ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:movies_app/core/app_router_mobile.dart';
 import 'package:movies_app/features/mobile/home/presentation/views/widgets/my_list_item.dart';
-import 'package:movies_app/features/mobile/home/presentation/views/widgets/solo_list_item.dart';
+import 'package:movies_app/features/mobile/home/presentation/views/widgets/list_item.dart';
 import 'package:movies_app/features/mobile/home/presentation/views/widgets/sub_home_stack.dart';
 
 class HomeStack extends StatelessWidget {
@@ -35,6 +35,7 @@ class HomeStack extends StatelessWidget {
                       height: 5,
                     ),
                     SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
                       child: Row(
                         children: [
                           MyListItem(
@@ -70,18 +71,21 @@ class HomeStack extends StatelessWidget {
                     const SizedBox(
                       height: 5,
                     ),
-                    const Row(
-                      children: [
-                        SoloListItem(
-                          imge: 'assets/images/series_2.png',
-                        ),
-                        SoloListItem(
-                          imge: 'assets/images/series_2.png',
-                        ),
-                        SoloListItem(
-                          imge: 'assets/images/series_2.png',
-                        ),
-                      ],
+                    const SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          ListItem(
+                            imge: 'assets/images/series_2.png',
+                          ),
+                          ListItem(
+                            imge: 'assets/images/series_2.png',
+                          ),
+                          ListItem(
+                            imge: 'assets/images/series_2.png',
+                          ),
+                        ],
+                      ),
                     )
                   ],
                 ),
